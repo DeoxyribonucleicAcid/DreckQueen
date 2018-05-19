@@ -82,6 +82,9 @@ public class TrashMountain : MonoBehaviour {
                 newTrash.transform.parent = transform;
                 if (tc == 0 && i % 2 != 0)
                     newTrash.GetComponent<TrashController>().isCentral = true;
+                else if (i % 2 == 0 && Mathf.Abs(tc) == 1) {
+                    newTrash.GetComponent<TrashController>().isCentral = true;
+                }
 
                 trashList.Insert(0, newTrash);
             }
@@ -127,20 +130,23 @@ public class TrashMountain : MonoBehaviour {
 
     public static List<GameObject> GetCurrentLevel(Vector2 middlePos) {
         List<GameObject> currentLevelList = new List<GameObject>();
-        GameObject middleTrashElement = null;
+        List<GameObject> middleTrashElements = new List<GameObject>();
         for (int i = 0; i < destroyToNextLevel; i++) {
             GameObject trashElement = trashList[i];
             
             if(trashElement.GetComponent<TrashController>().isCentral) {
-                middleTrashElement = trashElement;
+                middleTrashElements.Add(trashElement);
             } else {
                 currentLevelList.Add(trashList[i]);
             }
 
             
         }
-        if(currentLevelList.Count == 0 && destroyToNextLevel > 0 && middleTrashElement != null) {
-            currentLevelList.Add(middleTrashElement);
+        if(currentLevelList.Count == 0 && destroyToNextLevel > 0 && middleTrashElements.Count > 0) {
+            foreach(GameObject middleTrashElement in middleTrashElements) {
+                currentLevelList.Add(middleTrashElement);
+            }
+            
         }
         return currentLevelList;
     }

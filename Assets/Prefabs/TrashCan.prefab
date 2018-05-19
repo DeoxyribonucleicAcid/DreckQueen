@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4807251856144594}
   - component: {fileID: 212327318471613178}
-  - component: {fileID: 114416970242346442}
-  - component: {fileID: 50350341876412752}
-  - component: {fileID: 60487808785441528}
-  m_Layer: 8
+  - component: {fileID: 114878052066989474}
+  - component: {fileID: 50346207910537854}
+  - component: {fileID: 60070222534412068}
+  m_Layer: 0
   m_Name: TrashCan
   m_TagString: Trash
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50350341876412752
+--- !u!50 &50346207910537854
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -52,7 +52,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1876052586552926}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -61,9 +61,9 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
---- !u!60 &60487808785441528
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!60 &60070222534412068
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -156,7 +156,7 @@ PolygonCollider2D:
       - {x: 0.17, y: -1.2099999}
       - {x: 0.31, y: -1.18}
       - {x: 0.37, y: -1.12}
---- !u!114 &114416970242346442
+--- !u!114 &114878052066989474
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

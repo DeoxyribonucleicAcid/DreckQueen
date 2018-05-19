@@ -27,4 +27,10 @@ public class QueenController : MonoBehaviour {
         
     }
 
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.collider.tag == "Trash" || collision.collider.tag == "Ground") {
+            isFalling = false;
+        }
+    }
+
 }

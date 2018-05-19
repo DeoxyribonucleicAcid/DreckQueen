@@ -26,9 +26,9 @@ public class TrashController : MonoBehaviour {
             TrashMountain.staticTrashCounter++;
         }
 
-        if(collision.collider.tag == "Queen") {
+        /*if(collision.collider.tag == "Queen") {
             collision.collider.GetComponent<QueenController>().isFalling = false;
-        }
+        }*/
     }
 
     private void OnMouseDown() {

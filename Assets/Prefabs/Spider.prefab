@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4718618546055606}
   - component: {fileID: 212662815145607146}
   - component: {fileID: 95232639072533040}
-  - component: {fileID: 60240759425573180}
-  - component: {fileID: 114903584955027502}
+  - component: {fileID: 60283477358408186}
+  - component: {fileID: 114520470610221686}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -43,7 +43,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60240759425573180
+--- !u!60 &60283477358408186
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -142,7 +142,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114903584955027502
+--- !u!114 &114520470610221686
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a626492e9b6622445bf83202f95e3b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePoints: 10
-  movementSpeed: 1
+  lifePoints: 1
+  movementSpeed: 3
   damage: 0
   wayMask:
     serializedVersion: 2
