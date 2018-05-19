@@ -19,6 +19,8 @@ public class WaveManager : MonoBehaviour {
     
     public float timeBetweenWaves = 10f;
 
+    public static bool wavesCanStart;
+
     Queue<Wave> waveQueue;
     Wave currentWave;
     public static int waveCounter;
@@ -38,24 +40,26 @@ public class WaveManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(!waveRunning && waveQueue.Count > 0) {
-            if(waveCounter == 0 || waitTimeToNextWave <= 0) {
-                StartCoroutine(SpawnWave(waveQueue.Dequeue()));
-                waitTimeToNextWave = timeBetweenWaves;
+        if (wavesCanStart) {
+            if (!waveRunning && waveQueue.Count > 0) {
+                if (waveCounter == 0 || waitTimeToNextWave <= 0) {
+                    StartCoroutine(SpawnWave(waveQueue.Dequeue()));
+                    waitTimeToNextWave = timeBetweenWaves;
+                }
+                // Wait till starting next wave
+                waitTimeToNextWave -= Time.deltaTime;
             }
-            // Wait till starting next wave
-            waitTimeToNextWave -= Time.deltaTime;
-        }
 
-        if(waveRunning && currentDiedEnemies / 2 >= currentWave.spawnCount) {
-            if (OnWaveEnd != null) {
-                OnWaveEnd();
+            if (waveRunning && currentDiedEnemies / 2 >= currentWave.spawnCount) {
+                if (OnWaveEnd != null) {
+                    OnWaveEnd();
+                }
+                waveRunning = false;
+                currentDiedEnemies = 0;
+                waveCounter++;
             }
-            waveRunning = false;
-            currentDiedEnemies = 0;
-            waveCounter++;
         }
-        Debug.Log("Current wave: " + waveCounter);
+        // Debug.Log("Current wave: " + waveCounter);
 	}
 
     IEnumerator SpawnWave(Wave wave) {

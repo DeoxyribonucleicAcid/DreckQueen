@@ -54,6 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   fireRate: 2
+  requriredResources: 10
 --- !u!212 &212792888540734064
 SpriteRenderer:
   m_ObjectHideFlags: 1

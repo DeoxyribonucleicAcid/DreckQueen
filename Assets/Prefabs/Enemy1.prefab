@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4118119212773534}
   - component: {fileID: 212126426901319912}
   - component: {fileID: 114521595991181214}
+  - component: {fileID: 60442749010602056}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -41,6 +42,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60442749010602056
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626101267699788}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.96, y: -0.85999995}
+      - {x: 1.1, y: -0.7}
+      - {x: 1.25, y: -0.37}
+      - {x: 1.28, y: -0.22}
+      - {x: 1.28, y: 0.21}
+      - {x: 1.24, y: 0.35999998}
+      - {x: 1.1899999, y: 0.48999998}
+      - {x: 1.09, y: 0.69}
+      - {x: 0.96, y: 0.85999995}
+      - {x: 0.87, y: 0.95}
+      - {x: 0.7, y: 1.0799999}
+      - {x: 0.45, y: 1.1999999}
+      - {x: 0.32, y: 1.24}
+      - {x: 0.17, y: 1.27}
+      - {x: 0.02, y: 1.28}
+      - {x: -0.089999996, y: 1.28}
+      - {x: -0.29, y: 1.26}
+      - {x: -0.45999998, y: 1.1999999}
+      - {x: -0.65, y: 1.11}
+      - {x: -0.72999996, y: 1.06}
+      - {x: -0.87, y: 0.95}
+      - {x: -1.01, y: 0.79999995}
+      - {x: -1.1, y: 0.69}
+      - {x: -1.25, y: 0.35999998}
+      - {x: -1.27, y: 0.28}
+      - {x: -1.28, y: 0.16}
+      - {x: -1.28, y: -0.17999999}
+      - {x: -1.24, y: -0.37}
+      - {x: -1.1899999, y: -0.5}
+      - {x: -1.09, y: -0.7}
+      - {x: -0.96, y: -0.87}
+      - {x: -0.81, y: -1.01}
+      - {x: -0.7, y: -1.09}
+      - {x: -0.45999998, y: -1.22}
+      - {x: -0.37, y: -1.25}
+      - {x: -0.17, y: -1.28}
+      - {x: 0.22, y: -1.28}
+      - {x: 0.45999998, y: -1.22}
+      - {x: 0.65, y: -1.12}
+      - {x: 0.81, y: -1.02}
 --- !u!114 &114521595991181214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,6 +133,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
