@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0">
+        <file id="0" name="Spider_head.png~" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="Spider_leg_bottom.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="Spider_head.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="Spider_leg_top.png" width="256" height="256" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="entity_000">
+        <animation id="0" name="NewAnimation" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                </key>
+                <key id="1" time="129">
+                    <object_ref id="0" timeline="1" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="2" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="3" key="0" z_index="2"/>
+                    <object_ref id="3" timeline="4" key="0" z_index="3"/>
+                    <object_ref id="4" timeline="5" key="0" z_index="4"/>
+                    <object_ref id="5" timeline="6" key="0" z_index="5"/>
+                    <object_ref id="6" timeline="7" key="0" z_index="6"/>
+                    <object_ref id="7" timeline="8" key="0" z_index="7"/>
+                    <object_ref id="8" timeline="9" key="0" z_index="8"/>
+                    <object_ref id="9" timeline="10" key="0" z_index="9"/>
+                    <object_ref id="10" timeline="11" key="0" z_index="10"/>
+                    <object_ref id="11" timeline="12" key="0" z_index="11"/>
+                    <object_ref id="12" timeline="13" key="0" z_index="12"/>
+                    <object_ref id="13" timeline="14" key="0" z_index="13"/>
+                    <object_ref id="14" timeline="15" key="0" z_index="14"/>
+                    <object_ref id="15" timeline="16" key="0" z_index="15"/>
+                    <object_ref id="16" timeline="17" key="0" z_index="16"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="Spider_head">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-128.725314" y="121.543986"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="Spider_leg_top">
+                <key id="0">
+                    <object folder="0" file="3" x="-85.278276" y="124.057451"/>
+                </key>
+                <key id="1" time="129" spin="-1">
+                    <object folder="0" file="3" x="-97.925892" y="115.22557" angle="8.035956" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="Spider_leg_bottom">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="1" x="-68.823386" y="96.04191" angle="8.035956" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="Spider_leg_top_000">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="3" x="-88.826723" y="111.306395" angle="8.035956" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="4" name="Spider_leg_bottom_000">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="1" x="-59.569254" y="92.430008" angle="8.035956" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="5" name="Spider_leg_top_001">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="3" x="-74.59955" y="112.119831" angle="4.360877" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="6" name="Spider_leg_bottom_001">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="1" x="-51.511278" y="81.914753" angle="8.035956" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="7" name="Spider_leg_top_002">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="3" x="-54.301786" y="125.743247" angle="353.880471" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="8" name="Spider_leg_bottom_002">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="1" x="-62.6026" y="44.20601" angle="15.715675" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="9" name="Spider_leg_top_003">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="3" x="128.494961" y="114.995198" angle="351.787013" scale_x="-1" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="10" name="Spider_leg_bottom_003">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="1" x="78.238551" y="127.383543" angle="4.544997" scale_x="-1" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="11" name="Spider_leg_top_004">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="3" x="111.602827" y="120.120579" angle="356.691684" scale_x="-1" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="12" name="Spider_leg_bottom_004">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="1" x="83.063362" y="98.06216" angle="356.691684" scale_x="-1" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="13" name="Spider_leg_top_005">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="3" x="104.60455" y="116.968894" angle="358.107695" scale_x="-1" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="14" name="Spider_leg_bottom_005">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="1" x="79.900461" y="90.796177" angle="356.691684" scale_x="-1" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="15" name="Spider_leg_top_006">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="3" x="73.775341" y="142.034564" angle="14.508028" scale_x="-1" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="16" name="Spider_leg_bottom_006">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="1" x="89.238056" y="72.653813" angle="356.691684" scale_x="-1" scale_y="1"/>
+                </key>
+            </timeline>
+            <timeline id="17" name="Spider_head_000">
+                <key id="0" time="129" spin="0">
+                    <object folder="0" file="2" x="-109.756098" y="118.04878"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
