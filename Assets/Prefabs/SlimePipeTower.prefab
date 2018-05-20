@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5edd5858fc3ed4a95eab9564428f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.5
-  requriredResources: 5
+  fireRate: 2
+  requriredResources: 15
   dropSpawn: {fileID: 4046026038862250}
   drop: {fileID: 1652912932005868, guid: 27e504f853cf9d141b814f2fa0a001ae, type: 2}
 --- !u!212 &212662742693840652

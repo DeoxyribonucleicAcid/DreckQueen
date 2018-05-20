@@ -174,8 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a626492e9b6622445bf83202f95e3b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePoints: 1
-  movementSpeed: 3
+  lifePoints: 50
+  movementSpeed: 2
   damage: 1
   wayMask:
     serializedVersion: 2

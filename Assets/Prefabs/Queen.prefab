@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683e10aabe90bc9468c875fe6f3d0095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifePoints: 3
+  LifePoints: 13
   isFalling: 0
 --- !u!212 &212167663466277206
 SpriteRenderer:

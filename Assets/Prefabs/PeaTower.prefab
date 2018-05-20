@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ca64d166fd35746b99d3636bc4bcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.3
-  requriredResources: 1
+  fireRate: 0.7
+  requriredResources: 5
   peaSpawn: {fileID: 4046026038862250}
   peaProjectille: {fileID: 114763389946752682, guid: 7360ef815a389374b970e85f226ba257,
     type: 2}

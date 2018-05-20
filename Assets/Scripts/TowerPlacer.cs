@@ -6,6 +6,8 @@ public class TowerPlacer : MonoBehaviour {
 
     public BuildPlace[] buildPlaces;
 
+    public Color buildPlaceHighlightColor;
+
     public static GameObject towerToPlace;
     public static TowerResourcesController towerResController;
 
@@ -29,7 +31,7 @@ public class TowerPlacer : MonoBehaviour {
         Debug.Log("Highlighting empty build places now");
         foreach(BuildPlace bp in buildPlaces) {
             if(bp.empty) {
-                bp.GetComponent<SpriteRenderer>().color = Color.red;
+                bp.GetComponent<SpriteRenderer>().color = buildPlaceHighlightColor;
             }
             
         }

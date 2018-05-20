@@ -19,6 +19,11 @@ public class TowerResourcesController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         progressbar.fillAmount = (float)(currentResources) / (float)(requiredResources);
+        if(progressbar.fillAmount >= 1) {
+            progressbar.color = Color.green;
+        } else {
+            progressbar.color = Color.red;
+        }
 	}
 
     public void AddResources(int res) {
