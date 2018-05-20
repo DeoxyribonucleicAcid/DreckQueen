@@ -5,10 +5,13 @@ using UnityEngine;
 public class TrashController : MonoBehaviour {
 
     int collisionCounter;
+
+    public int resources = 5;
     public bool isCentral;
     public bool clickable;
 
     bool isStatic;
+    public bool trashApplied;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +20,10 @@ public class TrashController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(trashApplied) {
+            TrashMountain.DestroyTrash(gameObject);
+            Destroy(gameObject);
+        }
 	}
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -33,8 +39,9 @@ public class TrashController : MonoBehaviour {
 
     private void OnMouseDown() {
         if(clickable) {
-            TrashMountain.DestroyTrash(gameObject);
-            Destroy(gameObject);
+            GameManager.GetInstance().SetMouseInputState(GameManager.MouseInputState.DragResource);
+            BuildbarController.trashToApply = this;
+            
         }
     }
 

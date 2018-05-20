@@ -14,11 +14,18 @@ public class TowerButton : MonoBehaviour {
 
     public void OnClick() {
         Debug.Log("Clicked on button");
-        if(resController.CanBuild()) {
-            TowerPlacer.towerToPlace = tower;
-            TowerPlacer.towerResController = resController;
-            GameManager.GetInstance().SetMouseInputState(GameManager.MouseInputState.PlaceTower);
+        if(GameManager.GetInstance().GetMouseInputState() == GameManager.MouseInputState.Idle || GameManager.GetInstance().GetMouseInputState() == GameManager.MouseInputState.PlaceTower) { 
+            if(resController.CanBuild()) {
+                TowerPlacer.towerToPlace = tower;
+                TowerPlacer.towerResController = resController;
+                GameManager.GetInstance().SetMouseInputState(GameManager.MouseInputState.PlaceTower);
+            }
         }
-        
+        else if(GameManager.GetInstance().GetMouseInputState() == GameManager.MouseInputState.DragResource) {
+            resController.AddResources(BuildbarController.trashToApply.resources);
+            BuildbarController.trashToApply.trashApplied = true;
+            BuildbarController.trashToApply = null;
+            GameManager.GetInstance().SetMouseInputState(GameManager.MouseInputState.Idle);
+        }
     }
 }

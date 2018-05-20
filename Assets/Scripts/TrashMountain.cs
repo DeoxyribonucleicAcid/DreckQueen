@@ -8,7 +8,7 @@ public class TrashMountain : MonoBehaviour {
 
     public int levels;
     public GameObject queen;
-    public GameObject trash;
+    public GameObject[] trash;
 
     public Vector2 trashOffset;
 
@@ -56,8 +56,8 @@ public class TrashMountain : MonoBehaviour {
 
     void GenerateMountain() {
         Vector2 spawnPosition = transform.position;
-        float trashWidth = trash.transform.localScale.x;
-        float trashHeight = trash.transform.localScale.y;
+        float trashWidth = trash[0].transform.localScale.x;
+        float trashHeight = trash[0].transform.localScale.y;
 
         for (int i = levels; i > 0; i--) {
             spawnPosition.x = transform.position.x;
@@ -78,7 +78,11 @@ public class TrashMountain : MonoBehaviour {
                         spawnPosition.x -= trashWidth + trashOffset.x;
                 }
 
-                GameObject newTrash = Instantiate<GameObject>(trash, spawnPosition, Quaternion.identity);
+                int randIndex = (int)Random.Range(0, 3);
+                GameObject randomTrash = trash[randIndex];
+
+
+                GameObject newTrash = Instantiate<GameObject>(randomTrash, spawnPosition, Quaternion.identity);
                 newTrash.transform.parent = transform;
                 if (tc == 0 && i % 2 != 0)
                     newTrash.GetComponent<TrashController>().isCentral = true;
@@ -101,12 +105,16 @@ public class TrashMountain : MonoBehaviour {
         Vector2 topTrashPos = trashList[0].transform.position;
         float queenHeight = queen.transform.localScale.y;
 
-        Vector2 queenPos = new Vector2(topTrashPos.x, topTrashPos.y + 2f * queenHeight);
+        Vector2 queenPos = new Vector2(topTrashPos.x, topTrashPos.y + 12f * queenHeight);
         GameObject newQueen = Instantiate<GameObject>(queen, queenPos, Quaternion.identity);
         newQueen.transform.parent = transform;
         queenController = newQueen.GetComponent<QueenController>();
+        CrownController.queen = queenController;
 
-        yield return new WaitForSeconds(2f);
+        while(queenController.isFalling)
+            yield return null;
+
+        yield return new WaitForSeconds(3f);
 
         WaveManager.wavesCanStart = true;
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IHitable {
 
-    public System.Action OnDeath;
+    public System.Action<Enemy> OnDeath;
 
     public int lifePoints;
     public float movementSpeed;
@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour, IHitable {
 
     // Use this for initialization
     void Start () {
-        spawnTime = Time.time;
+        spawnTime = Time.timeSinceLevelLoad;
         trashMountain = TrashMountain.GetInstance();
         facing = transform.rotation;
 	}
@@ -37,10 +37,9 @@ public class Enemy : MonoBehaviour, IHitable {
 
         transform.Translate(velocity, Space.Self);
 
-        /*if(Time.time - spawnTime >= 7f ) {
+        if(GameManager.gameOver && Time.timeSinceLevelLoad - spawnTime >= 10f ) {
             lifePoints = 0;
-        }*/
-
+        }
         
 
 		if(lifePoints <= 0) {
@@ -94,7 +93,7 @@ public class Enemy : MonoBehaviour, IHitable {
 
     void Die() {
         if(OnDeath != null) {
-            OnDeath();
+            OnDeath(this);
             Destroy(gameObject);
         }
     }
@@ -107,6 +106,7 @@ public class Enemy : MonoBehaviour, IHitable {
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag == "Queen") {
             lifePoints = 0;
+            collision.GetComponent<QueenController>().LifePoints--;
         }
     }
 }

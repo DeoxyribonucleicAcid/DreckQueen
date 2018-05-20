@@ -11,9 +11,14 @@ public class BuildPlace : MonoBehaviour {
     GameObject placedTower;
     Sprite originalSprite;
 
-	// Use this for initialization
-	void Start () {
+    private bool mirrorImage;
+
+    // Use this for initialization
+    void Start () {
         originalSprite = GetComponent<SpriteRenderer>().sprite;
+        if (Camera.main.WorldToScreenPoint(transform.position).x > Screen.width / 2f) {
+            mirrorImage = true;
+        }
 	}
 	
 	// Update is called once per frame
@@ -32,14 +37,7 @@ public class BuildPlace : MonoBehaviour {
         }
 	}
 
-    private void OnMouseDown() {
-        Debug.Log("Clicked on buildplace");
-        switch(GameManager.GetInstance().GetMouseInputState()) {
-            case GameManager.MouseInputState.PlaceTower:
-                PlaceTower();
-                break;
-        }
-    }
+
 
     void PlaceTower() {
         Debug.Log("Try to place tower");
@@ -49,6 +47,7 @@ public class BuildPlace : MonoBehaviour {
 
             GameObject tower = Instantiate<GameObject>(newTower, transform.position, transform.rotation);
             tower.transform.parent = transform;
+            tower.GetComponent<SpriteRenderer>().flipX = mirrorImage;
             // tower.transform.localScale = transform.localScale * 2;
             placedTower = tower;
 
@@ -61,21 +60,42 @@ public class BuildPlace : MonoBehaviour {
         GameManager.GetInstance().SetMouseInputState(GameManager.MouseInputState.Idle);
     }
 
+    private void OnMouseDown() {
+
+        if(GameManager.GetInstance().GetMouseInputState() == GameManager.MouseInputState.PlaceTower) {
+
+        
+            Debug.Log("Clicked on buildplace");
+
+            switch (GameManager.GetInstance().GetMouseInputState()) {
+                case GameManager.MouseInputState.PlaceTower:
+                    PlaceTower();
+                    break;
+            }
+            SpriteRenderer myRenderer = GetComponent<SpriteRenderer>();
+            myRenderer.sprite = originalSprite;
+            myRenderer.color = new Color(myRenderer.color.r, myRenderer.color.g, myRenderer.color.b, 1f);
+        }
+    }
+
     private void OnMouseOver() {
         if(GameManager.GetInstance().GetMouseInputState() == GameManager.MouseInputState.PlaceTower) {
             GameObject towerToPlace = TowerPlacer.towerToPlace;
             Sprite previewTowerSprite = towerToPlace.GetComponent<SpriteRenderer>().sprite;
             SpriteRenderer myRenderer = GetComponent<SpriteRenderer>();
             myRenderer.sprite = previewTowerSprite;
+            myRenderer.flipX = mirrorImage;
             myRenderer.color = new Color(myRenderer.color.r, myRenderer.color.g, myRenderer.color.b, 0.5f);
         }
         
     }
 
     private void OnMouseExit() {
-        SpriteRenderer myRenderer = GetComponent<SpriteRenderer>();
-        myRenderer.sprite = originalSprite;
-        myRenderer.color = new Color(myRenderer.color.r, myRenderer.color.g, myRenderer.color.b, 1f);
+        if (GameManager.GetInstance().GetMouseInputState() == GameManager.MouseInputState.PlaceTower) {
+            SpriteRenderer myRenderer = GetComponent<SpriteRenderer>();
+            myRenderer.sprite = originalSprite;
+            myRenderer.color = new Color(myRenderer.color.r, myRenderer.color.g, myRenderer.color.b, 1f);
+        }
     }
 
     Sprite GetTowerSprite() {

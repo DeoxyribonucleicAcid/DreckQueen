@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class QueenController : MonoBehaviour {
 
+    public int LifePoints;
+
     Animator animator;
     bool flipped = false;
     public bool isFalling;
@@ -13,10 +15,17 @@ public class QueenController : MonoBehaviour {
 	void Start () {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        isFalling = true;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void Update() {
+        if(LifePoints <= 0) {
+            GameManager.gameOver = true;
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
         if(isFalling) {
             rb.bodyType = RigidbodyType2D.Dynamic;
         } else {
@@ -28,9 +37,11 @@ public class QueenController : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("Queen colided with " + collision.collider.name);
         if (collision.collider.tag == "Trash" || collision.collider.tag == "Ground") {
             isFalling = false;
         }
+
     }
 
 }

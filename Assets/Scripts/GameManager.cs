@@ -1,12 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
     public static System.Action OnInputIdle;
     public static System.Action OnInputPlaceTower;
     public static System.Action OnInputDragResource;
+
+    public GameObject GameOverScreen;
+    public GameObject Buildbar;
+    public GameObject Trashmountain;
+
+    public static bool gameOver;
 
     public enum MouseInputState {
         Idle,
@@ -32,11 +39,28 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		mouseInputState = MouseInputState.Idle;
+        gameOver = false;
+        mouseInputState = MouseInputState.Idle;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (!gameOver) {
+            if (Input.GetMouseButtonDown(1)) {
+                SetMouseInputState(MouseInputState.Idle);
+                BuildbarController.trashToApply = null;
+            }
+        } else {
+            // Enable Gameoverscreen
+            GameOverScreen.SetActive(true);
+            // Disable everthing else
+            Buildbar.SetActive(false);
+            Trashmountain.SetActive(false);
+
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
 		
 	}
 

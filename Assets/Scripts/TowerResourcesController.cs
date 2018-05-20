@@ -21,6 +21,10 @@ public class TowerResourcesController : MonoBehaviour {
         progressbar.fillAmount = (float)(currentResources) / (float)(requiredResources);
 	}
 
+    public void AddResources(int res) {
+        currentResources += res;
+    }
+
     public void SubractBuildCosts() {
         currentResources -= requiredResources;
     }
