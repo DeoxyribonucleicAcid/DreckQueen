@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 2
-  requriredResources: 15
+  requriredResources: 8
   dropSpawn: {fileID: 4046026038862250}
   drop: {fileID: 1652912932005868, guid: 27e504f853cf9d141b814f2fa0a001ae, type: 2}
 --- !u!212 &212662742693840652
