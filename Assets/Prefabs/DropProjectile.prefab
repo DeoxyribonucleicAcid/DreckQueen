@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4673188060408520}
   - component: {fileID: 212190138090899794}
-  - component: {fileID: 114927055594108210}
   - component: {fileID: 58233743137612644}
   - component: {fileID: 50250406513952664}
+  - component: {fileID: 114927055594108210}
   m_Layer: 0
   m_Name: DropProjectile
   m_TagString: Untagged

@@ -22,7 +22,7 @@ public class BuildPlace : MonoBehaviour {
         
 
         if (!empty && placedTower != null && currentSprite != GetTowerSprite()) {
-            // Debug.Log("Disable own SpriteRenderer");
+            Debug.Log("Disable own SpriteRenderer");
             GetComponent<SpriteRenderer>().enabled = false;
             // currentSprite = GetTowerSprite();
             // GetComponent<SpriteRenderer>().sprite = GetTowerSprite();
@@ -62,11 +62,14 @@ public class BuildPlace : MonoBehaviour {
     }
 
     private void OnMouseOver() {
-        GameObject towerToPlace = TowerPlacer.towerToPlace;
-        Sprite previewTowerSprite = towerToPlace.GetComponent<SpriteRenderer>().sprite;
-        SpriteRenderer myRenderer = GetComponent<SpriteRenderer>();
-        myRenderer.sprite = previewTowerSprite;
-        myRenderer.color = new Color(myRenderer.color.r, myRenderer.color.g, myRenderer.color.b, 0.5f);
+        if(GameManager.GetInstance().GetMouseInputState() == GameManager.MouseInputState.PlaceTower) {
+            GameObject towerToPlace = TowerPlacer.towerToPlace;
+            Sprite previewTowerSprite = towerToPlace.GetComponent<SpriteRenderer>().sprite;
+            SpriteRenderer myRenderer = GetComponent<SpriteRenderer>();
+            myRenderer.sprite = previewTowerSprite;
+            myRenderer.color = new Color(myRenderer.color.r, myRenderer.color.g, myRenderer.color.b, 0.5f);
+        }
+        
     }
 
     private void OnMouseExit() {

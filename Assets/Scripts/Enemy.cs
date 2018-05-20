@@ -105,7 +105,6 @@ public class Enemy : MonoBehaviour, IHitable {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-
         if(collision.tag == "Queen") {
             lifePoints = 0;
         }
