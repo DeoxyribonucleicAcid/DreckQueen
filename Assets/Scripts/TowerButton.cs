@@ -5,7 +5,7 @@ using UnityEngine;
 public class TowerButton : MonoBehaviour {
 
     TowerResourcesController resController;
-    Tower tower;
+    GameObject tower;
 
     private void Start() {
         resController = GetComponentInParent<TowerResourcesController>();

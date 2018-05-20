@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour, IHitable {
 
     public System.Action OnDeath;
 
@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour {
         
 
         if(hitHorizontal.collider != null) {
-            Debug.Log("Ray hit");
+           // Debug.Log("Ray hit");
             Debug.DrawRay(transform.position, horizontalRayDir, Color.red);
             transform.rotation = Quaternion.Euler(0, 0, angleFactor * 60);
             reachedTrashMountain = true;
@@ -99,6 +99,10 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    public void Hit(int damage) {
+        Debug.Log("Applying damage after hit");
+        lifePoints -= damage;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision) {
 

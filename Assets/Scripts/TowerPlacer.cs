@@ -6,7 +6,7 @@ public class TowerPlacer : MonoBehaviour {
 
     public BuildPlace[] buildPlaces;
 
-    public static Tower towerToPlace;
+    public static GameObject towerToPlace;
     public static TowerResourcesController towerResController;
 
     Color orignalBuildPlaceColor;

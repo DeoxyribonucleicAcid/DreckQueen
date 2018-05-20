@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class TowerResourcesController : MonoBehaviour {
 
-    public Tower tower;
+    public GameObject tower;
     public Image progressbar;
     int requiredResources;
     public int currentResources = 0;
 
 	// Use this for initialization
 	void Start () {
-        requiredResources = tower.requriredResources;
+        Debug.Log("Button | Tower Type: " + tower.GetType());
+        requiredResources = tower.GetComponent<Tower>().requriredResources;
 	}
 	
 	// Update is called once per frame
